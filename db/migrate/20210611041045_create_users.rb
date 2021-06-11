@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :first_name
       t.string :last_name
       t.string :password_digest # :password
+      t.boolean :filling_position # I'm (filling a position / building a project)
 
       t.timestamps
     end
