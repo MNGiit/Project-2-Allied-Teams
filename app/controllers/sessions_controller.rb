@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  def new #signup
+  def new
     if !session[:user_id]
       @user = User.new
     else
