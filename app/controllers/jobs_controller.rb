@@ -4,7 +4,10 @@ class JobsController < ApplicationController
   end
 
   def show
-
+    @job = Job.find_by(id: params[:id])
+    if !@job
+      redirect_to "/" # new_job_path
+    end
   end
 
   def new
