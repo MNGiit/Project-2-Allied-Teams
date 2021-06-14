@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def new # signup
     if !session[:user_id]
       @user = User.new
@@ -8,8 +7,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def create
-
+  def create #signup
+    @user = User.create(user_params)
+    # can check to see if it's valid @user.valid?
+    session[:user_id] = @user.id
+    redirect_to "/" # redirect to user page?
   end
 
   private
