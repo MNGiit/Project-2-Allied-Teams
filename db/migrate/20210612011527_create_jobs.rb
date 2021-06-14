@@ -7,6 +7,11 @@ class CreateJobs < ActiveRecord::Migration[6.1]
       t.string :description
       t.boolean :visible, :default => true
 
+      # could make another model called applicants and join the two
+      t.integer :new_applicants
+      t.integer :active_applicants
+      t.integer :hired_applicants
+
       t.timestamps
     end
   end
