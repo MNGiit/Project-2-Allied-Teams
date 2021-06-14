@@ -1,5 +1,6 @@
 <h1>Signup</h1>
-<%= form_for @user, url: {action: "create", controller: "sessions"} do |f| %>
+<!-- form_for @user do |f| -->
+<%= form_for @user, url: {action: "create", controller: "users"} do |f| %>
     <!-- Email -->
     <%= f.label :email %>
     <%= f.text_field :email %><br>
@@ -14,7 +15,7 @@
 
     <!-- Filling Position -->
     <%= f.label :filling_position %>
-    <%= select_tag(:filling_position, options_for_select([['Building a project', false], ['Filling a position', true]])) %> <br>
+    <%= select_tag(:filling_position, options_for_select([['Building a project', false], ['Filling a position', true]])) %><br>
 
     <!-- Password -->
     <%= f.label :password %>
