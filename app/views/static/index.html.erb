@@ -1,0 +1,7 @@
+<h1>Allied Teams</h1>
+<% if session[:user_id] %>
+    <%= link_to "Log Out", logout_path, method:'get' %> <!-- consider delete instead of get -->
+    <% else %>
+    <%= link_to "Log In", login_path %><br>
+<% end %>
+<p><%= link_to "Jobs", "/jobs" %></p> <!-- jobs_path -->
