@@ -15,12 +15,12 @@ class JobsController < ApplicationController
   end
 
   def create
-
+    
   end
 
   private
 
   def job_params
-
+    params.require(:job).permit(:location, :department, :function, :description, :visible)
   end
 end
