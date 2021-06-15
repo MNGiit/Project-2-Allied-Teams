@@ -19,6 +19,18 @@ class JobsController < ApplicationController
     redirect_to user_jobs_path
   end
 
+  def filter
+    if !params[:query_location].blank?
+      # find jobs
+    elsif !params[:query_department].blank?
+      # find jobs
+    elsif !params[:query_function].blank?
+      # find jobs
+    else
+      redirect_to user_jobs_path
+    end
+  end
+  
   private
 
   def job_params
