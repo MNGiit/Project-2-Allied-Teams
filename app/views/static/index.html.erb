@@ -3,5 +3,6 @@
     <%= link_to "Log Out", logout_path, method:'get' %> <!-- consider delete instead of get -->
     <% else %>
     <%= link_to "Log In", login_path %><br>
+    <%= link_to "Not a member? Sign Up!", new_user_path %><br> <!-- signup_path -->
 <% end %>
 <p><%= link_to "Jobs", "/jobs" %></p> <!-- jobs_path -->
