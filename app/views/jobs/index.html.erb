@@ -7,6 +7,18 @@
     <%= link_to "Log In", login_path %><br>
 <% end %>
 
+<%= form_with url: jobs_path, method: :get do |form| %> <!-- can replace jobs_search_path with /jobs/search -->
+  <%= form.label :query_function, "Filter using Job Function:" %>
+  <%= form.text_field :query %>
+  or
+  <%= form.label :query_department, "Filter using Job Department:" %>
+  <%= form.text_field :query_department %>
+  or
+  <%= form.label :query_location, "Filter using Job Location:" %>
+  <%= form.text_field :query_location %>
+  <%= form.submit "Filter" %>
+<% end %>
+
 <!-- Filter -->
 <!-- form_with url: jobs_search_path, method: :get do |form| --> <!-- can replace jobs_search_path with /jobs/search -->
 <!-- Function -->
