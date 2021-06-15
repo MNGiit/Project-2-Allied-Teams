@@ -15,7 +15,8 @@ class JobsController < ApplicationController
   end
 
   def create
-    
+    @job = Job.create(job_params)
+    redirect_to user_jobs_path
   end
 
   private
