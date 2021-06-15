@@ -22,15 +22,27 @@ class JobsController < ApplicationController
   def filter
     if !params[:query_location].blank?
       # find jobs
+      Job.find_each(:location => params[:query_location]) do |j|
+        @jobs << j
+      end
+      @jobs
     elsif !params[:query_department].blank?
       # find jobs
+      Job.find_each(:location => params[:query_department]) do |j|
+        @jobs << j
+      end
+      @jobs
     elsif !params[:query_function].blank?
       # find jobs
+      Job.find_each(:location => params[:query_function]) do |j|
+        @jobs << j
+      end
+      @jobs
     else
       redirect_to user_jobs_path
     end
   end
-  
+
   private
 
   def job_params
