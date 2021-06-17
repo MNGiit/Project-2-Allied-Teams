@@ -1,9 +1,35 @@
 <h1>New Job</h1>
 <!-- form_for @job do |f| -->
 <%= form_for @job, url: {action: "create", controller: "jobs"} do |f| %>
-    <!-- Function/Title -->
+    <!-- Job Title -->
+    <h4>Job Title</h4>
+    <!-- Job Code -->
+    <h4>Job Code</h4>
+    <!-- Description -->
+    <h4>Description</h4>
+
+    <h3>Employer Details</h3>
+    <!-- Industry -->
+    <h4>Industry</h4>
+    <!-- Job Function -->
     <%= f.label :function %>
     <%= f.text_field :function %><br>
+    <!-- Employment Type -->
+    <h4>Employment Type</h4>
+    <!-- Experience Level -->
+    <h4>Experience Level</h4>
+    <!-- Minimum yrs --> <!-- Upper yrs -->
+    <!-- Positions -->
+    <h4>Positions</h4>
+    <!-- Annual Salary From -->
+    <h4>Annual Salary From</h4>
+    <!-- Annual Salary Upto -->
+    <h4>Annual Salary Upto</h4>
+    <!-- Currency -->
+    <h4>Currency</h4>
+    <!-- Show Salary Details -->
+    <h4>Show Salary Details</h4>
+
 
     <!-- Department -->
     <%= f.label :department %>
@@ -12,9 +38,6 @@
     <!-- Location -->
     <%= f.label :location %>
     <%= f.text_field :location %><br>
-
-    <!-- Description -->
-
 
     <!-- Submit -->
     <%= f.submit "Submit" %>
