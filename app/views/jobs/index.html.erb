@@ -28,5 +28,5 @@
 <!-- end of filter -->
 
 <% @jobs.each do |i| %>
-  <p><%= link_to i.id, job_path(i) %>, new: <%= i.new_applicants %>, active: <%= i.active_applicants %>, hired: <%= i.hired_applicants %> %>
+  <p>Title: <%= i.function %>, new: <%= i.new_applicants %>, active: <%= i.active_applicants %>, hired: <%= i.hired_applicants %> %> <!-- link_to i.id, job_path(i) -->
 <% end %>
