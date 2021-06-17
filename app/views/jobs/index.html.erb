@@ -1,6 +1,6 @@
 <h1>Jobs</h1>
 <h2>Jobs inside the database would go here.</h2>
-<%= link_to "New Job", new_job_path %> <br>
+<%= link_to "New Job", new_user_job_path %> <br> <!-- new_job_path -->
 <% if session[:user_id] %>
     <%= link_to "Log Out", logout_path, method:'delete' %>
     <% else %>
