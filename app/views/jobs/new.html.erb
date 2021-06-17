@@ -4,17 +4,28 @@
 <%= form_for @job, url: {action: "create", controller: "jobs"} do |f| %>
     <!-- Job Title -->
     <h4>Job Title</h4>
+    <!-- f.label :title -->
+    <!-- f.text_field :title, :required => true --><!-- autocomplete="on" -->
+
     <!-- Job Code -->
     <h4>Job Code</h4>
-    <!-- Description -->
+    <!-- f.label :code -->
+    <!-- f.number_field :code -->
+
     <h4>Description</h4>
+    <!-- f.label :description -->
+    <!-- f.text_field :description -->
 
     <h3>Employer Details</h3>
     <!-- Industry -->
     <h4>Industry</h4>
+    <!-- f.label :industry-->
+    <!-- f.text_field :industry -->
+
     <!-- Job Function -->
     <%= f.label :function %>
     <%= f.text_field :function %><br>
+
     <!-- Employment Type -->
     <h4>Employment Type</h4>
     <!-- Experience Level -->
