@@ -28,13 +28,13 @@ class JobsController < ApplicationController
       @jobs
     elsif !params[:query_department].blank?
       # find jobs
-      Job.find_each(:location => params[:query_department]) do |j|
+      Job.find_each(:department => params[:query_department]) do |j|
         @jobs << j
       end
       @jobs
     elsif !params[:query_function].blank?
       # find jobs
-      Job.find_each(:location => params[:query_function]) do |j|
+      Job.find_each(:function => params[:query_function]) do |j|
         @jobs << j
       end
       @jobs
