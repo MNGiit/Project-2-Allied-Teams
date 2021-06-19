@@ -13,10 +13,20 @@
 ActiveRecord::Schema.define(version: 2021_06_12_011527) do
 
   create_table "jobs", force: :cascade do |t|
+    t.string "title"
+    t.integer "code"
+    t.string "description"
+    t.string "industry"
+    t.string "function"
     t.string "location"
     t.string "department"
-    t.string "function"
-    t.string "description"
+    t.integer "experience_from"
+    t.integer "experience_upto"
+    t.integer "positions"
+    t.integer "annual_salary_from"
+    t.integer "annual_salary_upto"
+    t.string "currency"
+    t.boolean "show_salary_details", default: true
     t.boolean "visible", default: true
     t.integer "new_applicants"
     t.integer "active_applicants"
