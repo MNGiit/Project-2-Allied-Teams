@@ -3,45 +3,51 @@
 <!-- form_for @job do |f| -->
 <%= form_for @job, url: {action: "create", controller: "jobs"} do |f| %>
     <!-- Job Title -->
-    <h4>Job Title</h4>
-    <!-- f.label :title -->
+    <%= f.label :title %>
+    <%= f.text_field :title, :required => true %> <!-- autocomplete="on"-->
     <!-- f.text_field :title, :required => true --><!-- autocomplete="on" -->
 
     <!-- Job Code -->
-    <h4>Job Code</h4>
-    <!-- f.label :code -->
-    <!-- f.number_field :code -->
+    <%= f.label :code %>
+    <%= f.number_field :code %>
 
-    <h4>Description</h4>
-    <!-- f.label :description -->
-    <!-- f.text_field :description -->
+    <%= f.label :description %>
+    <%= f.text_field :description %>
 
     <h3>Employer Details</h3>
     <!-- Industry -->
-    <h4>Industry</h4>
-    <!-- f.label :industry-->
-    <!-- f.text_field :industry -->
+    <%= f.label :industry %>
+    <%= f.text_field :industry %>
 
     <!-- Job Function -->
     <%= f.label :function %>
     <%= f.text_field :function %><br>
 
     <!-- Employment Type -->
-    <h4>Employment Type</h4>
+    <%= f.label :employment_type %>
+    <!-- f.text_field :employment_type -->
+
     <!-- Experience Level -->
     <h4>Experience Level</h4>
+    <%= f.number_field :experience_from %>Yrs <%= f.number_field :experience_upto %>Yrs<br>
     <!-- Minimum yrs --> <!-- Upper yrs -->
+
     <!-- Positions -->
-    <h4>Positions</h4>
-    <!-- Annual Salary From -->
-    <h4>Annual Salary From</h4>
-    <!-- Annual Salary Upto -->
-    <h4>Annual Salary Upto</h4>
+    <%= f.label :positions %>
+    <%= f.number_field :positions %><br>
+
+    <!-- Annual Salary From -->     <!-- Annual Salary Upto -->
+    <%= f.label :annual_salary_from %>
+    <%= f.number_field :annual_salary_from %>
+    <%= f.label :annual_salary_upto %>
+    <%= f.number_field :annual_salary_upto %><br>
+
     <!-- Currency -->
-    <h4>Currency</h4>
+    <%= f.label :currency %>
+    <%= f.text_field :currency %>
+
     <!-- Show Salary Details -->
     <h4>Show Salary Details</h4>
-
 
     <!-- Department -->
     <%= f.label :department %>
