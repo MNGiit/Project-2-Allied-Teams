@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "jobsnew.css" %>
 <h1>New Job</h1>
-<!-- form_for @job do |f| -->
-<%= form_for @job, url: {action: "create", controller: "jobs"} do |f| %>
+<!-- form_for @job, url: {action: "create", controller: "jobs"} do |f| -->
+<%= form_for @job do |f| %>
     <!-- Job Title -->
     <%= f.label :title %>
     <%= f.text_field :title, :required => true %> <!-- autocomplete="on"-->
