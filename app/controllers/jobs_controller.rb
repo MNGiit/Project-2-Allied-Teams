@@ -16,7 +16,7 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.create(job_params)
-    redirect_to user_jobs_path
+    redirect_to user_jobs_path(session[:user_id])
   end
 
   def filter
