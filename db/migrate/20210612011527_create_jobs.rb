@@ -8,8 +8,8 @@ class CreateJobs < ActiveRecord::Migration[6.1]
       t.string :function
       t.string :location
       t.string :department
-      t.integer :minimum_experience_level
-      t.integer :experience_level
+      t.integer :experience_from
+      t.integer :experience_upto
       t.integer :positions
       t.integer :annual_salary_from
       t.integer :annual_salary_upto
