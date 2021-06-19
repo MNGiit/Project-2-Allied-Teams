@@ -6,6 +6,7 @@ class CreateJobs < ActiveRecord::Migration[6.1]
       t.string :description
       t.string :industry
       t.string :function
+      t.string :employment_type
       t.string :location
       t.string :department
       t.integer :experience_from
