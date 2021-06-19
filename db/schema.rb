@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_011527) do
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.integer "code"
-    t.string "description"
+    t.text "description"
     t.string "industry"
     t.string "function"
     t.string "employment_type"
