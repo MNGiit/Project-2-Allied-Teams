@@ -11,7 +11,9 @@ class JobsController < ApplicationController
   end
 
   def new
+    @titles = ['web developer', 'web designer', 'software developer', 'graphic artist', 'writer']
     @job = Job.new
+    # render json: { birds: ['robin', 'bluebird']}.to_json
   end
 
   def create
