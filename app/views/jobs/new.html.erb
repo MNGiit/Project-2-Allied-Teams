@@ -2,11 +2,25 @@
 <!-- javascript_pack_tag 'jobsnew.js' -->
 <h1>New Job</h1>
 <!-- form_for @job, url: {action: "create", controller: "jobs"} do |f| -->
+<% if @titles %>
+  <% @titles.each do |t| %>
+    <%= t %>
+  <% end %>
+<% end %>
 <%= form_for @job do |f| %>
     <!-- Job Title -->
     <%= f.label :title %>
-    <%= f.text_field :title, :required => true %> <!-- autocomplete="on"-->
+    <%= f.text_field :title, list: "job_titles", :required => true %> <!-- autocomplete="on"-->
+    <datalist id="job_titles">
+      <% if @titles %>
+        <% @titles.each do |t| %>
+          <option value="<%= t %>">
+        <% end %>
+      <% end %>
+    </datalist>
     <!-- f.text_field :title, :required => true --><!-- autocomplete="on" -->
+    <!-- collection_select(:post, :author_id, Author.all, :id, :name_with_initial, prompt: true) -->
+
 
     <!-- Job Code -->
     <%= f.label :code %>
