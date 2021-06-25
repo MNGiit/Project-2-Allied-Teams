@@ -1,11 +1,13 @@
 <h1>Jobs</h1>
 <h2>Jobs inside the database would go here.</h2>
-<%= link_to "New Job", new_user_job_path(session[:user_id]) %> <br> <!-- new_job_path -->
-<% if session[:user_id] %>
-    <%= link_to "Log Out", logout_path, method:'delete' %>
-    <% else %>
-    <%= link_to "Log In", login_path %><br>
-<% end %>
+<nav>
+  <%= link_to "New Job", new_user_job_path(session[:user_id]) %> <br> <!-- new_job_path -->
+  <% if session[:user_id] %>
+      <%= link_to "Log Out", logout_path, method:'delete' %>
+      <% else %>
+      <%= link_to "Log In", login_path %><br>
+  <% end %>
+</nav>
 
 <%= form_with url: user_jobs_url(session[:user_id]), method: :get do |form| %> <!-- can replace jobs_search_path with /jobs/search -->
   <%= form.label :query_function, "Filter using Job Function:" %>
