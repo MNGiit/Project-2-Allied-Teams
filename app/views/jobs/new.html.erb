@@ -1,77 +1,84 @@
-<%= stylesheet_link_tag "jobsnew.css" %>
-<!-- javascript_pack_tag 'jobsnew.js' -->
-<h1>New Job</h1>
-<!-- form_for @job, url: {action: "create", controller: "jobs"} do |f| -->
-<% if @titles %>
-  <% @titles.each do |t| %>
-    <%= t %>
-  <% end %>
-<% end %>
-<%= form_for @job do |f| %>
-    <!-- Job Title -->
-    <%= f.label :title %>
-    <%= f.text_field :title, list: "job_titles", :required => true %> <!-- autocomplete="on"-->
-    <datalist id="job_titles">
-      <% if @titles %>
-        <% @titles.each do |t| %>
-          <option value="<%= t %>">
-        <% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag "jobsnew.css" %>
+    <!-- javascript_pack_tag 'jobsnew.js' -->
+  </head>
+  <body>
+    <h1>New Job</h1>
+    <!-- form_for @job, url: {action: "create", controller: "jobs"} do |f| -->
+    <% if @titles %>
+      <% @titles.each do |t| %>
+        <%= t %>
       <% end %>
-    </datalist>
-    <!-- f.text_field :title, :required => true --><!-- autocomplete="on" -->
-    <!-- collection_select(:post, :author_id, Author.all, :id, :name_with_initial, prompt: true) -->
+    <% end %>
+    <%= form_for @job do |f| %>
+        <!-- Job Title -->
+        <%= f.label :title %>
+        <%= f.text_field :title, list: "job_titles", :required => true %> <!-- autocomplete="on"-->
+        <datalist id="job_titles">
+          <% if @titles %>
+            <% @titles.each do |t| %>
+              <option value="<%= t %>">
+            <% end %>
+          <% end %>
+        </datalist>
+        <!-- f.text_field :title, :required => true --><!-- autocomplete="on" -->
+        <!-- collection_select(:post, :author_id, Author.all, :id, :name_with_initial, prompt: true) -->
 
 
-    <!-- Job Code -->
-    <%= f.label :code %>
-    <%= f.number_field :code %><br>
+        <!-- Job Code -->
+        <%= f.label :code %>
+        <%= f.number_field :code %><br>
 
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+        <%= f.label :description %>
+        <%= f.text_area :description %>
 
-    <h3>Employer Details</h3>
-    <!-- Industry -->
-    <%= f.label :industry %>
-    <%= f.text_field :industry %>
+        <h3>Employer Details</h3>
+        <!-- Industry -->
+        <%= f.label :industry %>
+        <%= f.text_field :industry %>
 
-    <!-- Job Function -->
-    <%= f.label :function %>
-    <%= f.text_field :function %><br>
+        <!-- Job Function -->
+        <%= f.label :function %>
+        <%= f.text_field :function %><br>
 
-    <!-- Employment Type -->
-    <%= f.label :employment_type %>
-    <%= f.text_field :employment_type %>
+        <!-- Employment Type -->
+        <%= f.label :employment_type %>
+        <%= f.text_field :employment_type %>
 
-    <!-- Experience Level -->
-    <h4>Experience Level</h4>
-    <%= f.number_field :experience_from %>Yrs <%= f.number_field :experience_upto %>Yrs<br>
-    <!-- Minimum yrs --> <!-- Upper yrs -->
+        <!-- Experience Level -->
+        <h4>Experience Level</h4>
+        <%= f.number_field :experience_from %>Yrs <%= f.number_field :experience_upto %>Yrs<br>
+        <!-- Minimum yrs --> <!-- Upper yrs -->
 
-    <!-- Positions -->
-    <%= f.label :positions %>
-    <%= f.number_field :positions %><br>
+        <!-- Positions -->
+        <%= f.label :positions %>
+        <%= f.number_field :positions %><br>
 
-    <!-- Annual Salary From -->     <!-- Annual Salary Upto -->
-    <%= f.label :annual_salary_from %>
-    <%= f.number_field :annual_salary_from %> <!-- step: 0.01 -->
-    <%= f.label :annual_salary_upto %>
-    <%= f.number_field :annual_salary_upto %><br>
+        <!-- Annual Salary From -->     <!-- Annual Salary Upto -->
+        <%= f.label :annual_salary_from %>
+        <%= f.number_field :annual_salary_from %> <!-- step: 0.01 -->
+        <%= f.label :annual_salary_upto %>
+        <%= f.number_field :annual_salary_upto %><br>
 
-    <!-- Currency -->
-    <%= f.label :currency %>
-    <%= f.text_field :currency %>
+        <!-- Currency -->
+        <%= f.label :currency %>
+        <%= f.text_field :currency %>
 
-    <!-- Show Salary Details -->
-    <h4>Show Salary Details</h4>
+        <!-- Show Salary Details -->
+        <h4>Show Salary Details</h4>
 
-    <!-- Department -->
-    <%= f.label :department %>
-    <%= f.text_field :department %><br>
+        <!-- Department -->
+        <%= f.label :department %>
+        <%= f.text_field :department %><br>
 
-    <!-- Location -->
-    <%= f.label :location %>
-    <%= f.text_field :location %><br>
+        <!-- Location -->
+        <%= f.label :location %>
+        <%= f.text_field :location %><br>
 
-    <!-- Submit -->
-    <%= f.submit "Submit" %>
-<% end %>
+        <!-- Submit -->
+        <%= f.submit "Submit" %>
+    <% end %>
+  </body>
+</html>
