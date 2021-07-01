@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   def index
     @jobs = Job.all
+    binding.pry
   end
 
   def show
@@ -22,6 +23,7 @@ class JobsController < ApplicationController
   end
 
   def filter
+    binding.pry
     if !params[:query_location].blank?
       # find jobs
       Job.find_each(:location => params[:query_location]) do |j|
@@ -50,5 +52,9 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:title, :code, :description, :industry, :function, :employment_type, :experience_from, :experience_upto, :positions,
       :annual_salary_from, :annual_salary_upto, :currency, :show_salary_details, :department, :location)
+  end
+
+  def filter_params
+    params.permit(:query, :query_department, :query_location)
   end
 end
