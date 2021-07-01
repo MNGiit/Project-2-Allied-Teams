@@ -1,7 +1,10 @@
 class JobsController < ApplicationController
   def index
-    @jobs = Job.all
-    binding.pry
+    # @jobs = Job.all
+    @jobs = Job.where(nil)
+    @jobs = @jobs.filter_function(params[:query]) if params[:query].present?
+    @jobs = @jobs.filter_location(params[:query_location]) if params[:query_location].present?
+    @jobs = @jobs.filter_department(params[:query_department]) if params[:query_department].present?
   end
 
   def show
