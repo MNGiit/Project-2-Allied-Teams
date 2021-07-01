@@ -6,5 +6,11 @@
   <% end %>
 </nav>
 <% if session[:user_id] %>
-  Welcome
+  <% if @user.filling_position == true %>
+    Welcome Applicant <%= @user.first_name %>
+  <% else %>
+    Welcome to Applicant Index
+    filling position? <%= @user.filling_position == false %>
+    <% @user.filling_position %>
+  <% end %>
 <% end %>

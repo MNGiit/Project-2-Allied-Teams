@@ -8,7 +8,15 @@ class UsersController < ApplicationController
   end
 
   def create #signup
-    @user = User.create(user_params)
+    # @user = User.create(user_params)
+    @user = User.new(user_params)
+    # binding.pry
+    if params[:filling_position] == "true"
+      @user.filling_position = true
+    else
+      @user.filling_position = false
+    end
+    @user.save
     # can check to see if it's valid @user.valid?
     session[:user_id] = @user.id
     redirect_to "/" # redirect to user page?
