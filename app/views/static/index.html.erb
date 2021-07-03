@@ -6,7 +6,10 @@
     <%= link_to "Not a member? Sign Up!", new_user_path %><br> <!-- signup_path -->
 <% end %>
 <% if session[:user_id] %>
-  <%= link_to "Applicants Dashboard", applicants_path %>
-  <%= link_to "Jobs Dashboard", user_jobs_path(session[:user_id]) %> <!-- user_jobs_path -->
+  <% if @filling_position %>
+    <%= link_to "Applicants Dashboard", applicants_path %>
+  <% else %>
+    <%= link_to "Jobs Dashboard", user_jobs_path(session[:user_id]) %> <!-- user_jobs_path -->
+  <% end %>
 <% end %>
 <p><%= link_to "Jobs (doesn't exist yet!)", "/jobs" %></p> <!-- jobs_path -->
