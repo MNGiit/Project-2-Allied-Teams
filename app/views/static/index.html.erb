@@ -9,7 +9,6 @@
   <% if @filling_position %>
     <%= link_to "Applicants Dashboard", applicants_path %>
   <% else %>
-    <%= link_to "Jobs Dashboard", user_jobs_path(session[:user_id]) %> <!-- user_jobs_path -->
+    <%= link_to "Jobs Dashboard", user_jobs_path(session[:user_id]) %> <!-- user_jobs_path --> <!-- jobs_path -->
   <% end %>
 <% end %>
-<p><%= link_to "Jobs (doesn't exist yet!)", "/jobs" %></p> <!-- jobs_path -->
