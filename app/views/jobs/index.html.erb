@@ -22,14 +22,6 @@
   <%= form.submit "Filter" %>
 <% end %>
 
-<!-- Filter -->
-<!-- form_with url: jobs_search_path, method: :get do |form| --> <!-- can replace jobs_search_path with /jobs/search -->
-<!-- Function -->
-<!-- Department -->
-<!-- Location -->
-<!-- submit -->
-<!-- end of filter -->
-
 <% @jobs.each do |i| %>
   <p>Title: <%= i.function %>, new: <%= i.new_applicants %>, active: <%= i.active_applicants %>, hired: <%= i.hired_applicants %> %> <!-- link_to i.id, job_path(i) -->
 <% end %>
