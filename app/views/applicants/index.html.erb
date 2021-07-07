@@ -15,3 +15,7 @@
     <% @user.filling_position %>
   <% end %>
 <% end %>
+
+<% @jobs.each do |j| %>
+  <p><%= link_to j.title, login_path %></p>
+<% end if @jobs %>
