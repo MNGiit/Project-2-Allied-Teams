@@ -17,5 +17,5 @@
 <% end %>
 
 <% @jobs.each do |j| %>
-  <p><%= link_to j.title, login_path %></p>
+  <p><%= link_to j.title, job_path(j) %></p>
 <% end if @jobs %>
