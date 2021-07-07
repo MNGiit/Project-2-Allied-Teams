@@ -1,1 +1,11 @@
-hello world
+<nav>
+  <%= link_to "Home", '/' %>
+  <% if session[:user_id] %>
+      <%= link_to "Log Out", logout_path, method:'delete' %>
+      <% else %>
+      <%= link_to "Log In", login_path %><br>
+  <% end %>
+</nav>
+
+<h2><%= @job.title %></h2>
+<p><%= @job.description %></p>
