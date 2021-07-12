@@ -13,5 +13,5 @@ Rails.application.routes.draw do
 
   resources :jobs, only: [:index, :new, :create, :show, :filter]
 
-  resources :applicants, only: [:index]
+  resources :applicants, only: [:index, :create]
 end
