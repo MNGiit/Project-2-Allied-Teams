@@ -14,9 +14,11 @@ ActiveRecord::Schema.define(version: 2021_07_12_032809) do
 
   create_table "applicants", force: :cascade do |t|
     t.integer "job_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["job_id"], name: "index_applicants_on_job_id"
+    t.index ["user_id"], name: "index_applicants_on_user_id"
   end
 
   create_table "jobs", force: :cascade do |t|
